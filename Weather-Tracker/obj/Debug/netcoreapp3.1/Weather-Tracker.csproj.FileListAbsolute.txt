@@ -1,0 +1,13 @@
+C:\Users\carsc22\Documents\GitHub\Weather-Tracker\Weather-Tracker\bin\Debug\netcoreapp3.1\Weather-Tracker.exe
+C:\Users\carsc22\Documents\GitHub\Weather-Tracker\Weather-Tracker\bin\Debug\netcoreapp3.1\Weather-Tracker.deps.json
+C:\Users\carsc22\Documents\GitHub\Weather-Tracker\Weather-Tracker\bin\Debug\netcoreapp3.1\Weather-Tracker.runtimeconfig.json
+C:\Users\carsc22\Documents\GitHub\Weather-Tracker\Weather-Tracker\bin\Debug\netcoreapp3.1\Weather-Tracker.runtimeconfig.dev.json
+C:\Users\carsc22\Documents\GitHub\Weather-Tracker\Weather-Tracker\bin\Debug\netcoreapp3.1\Weather-Tracker.dll
+C:\Users\carsc22\Documents\GitHub\Weather-Tracker\Weather-Tracker\bin\Debug\netcoreapp3.1\Weather-Tracker.pdb
+C:\Users\carsc22\Documents\GitHub\Weather-Tracker\Weather-Tracker\obj\Debug\netcoreapp3.1\Weather-Tracker.csprojAssemblyReference.cache
+C:\Users\carsc22\Documents\GitHub\Weather-Tracker\Weather-Tracker\obj\Debug\netcoreapp3.1\Weather-Tracker.csproj.CoreCompileInputs.cache
+C:\Users\carsc22\Documents\GitHub\Weather-Tracker\Weather-Tracker\obj\Debug\netcoreapp3.1\Weather-Tracker.AssemblyInfoInputs.cache
+C:\Users\carsc22\Documents\GitHub\Weather-Tracker\Weather-Tracker\obj\Debug\netcoreapp3.1\Weather-Tracker.AssemblyInfo.cs
+C:\Users\carsc22\Documents\GitHub\Weather-Tracker\Weather-Tracker\obj\Debug\netcoreapp3.1\Weather-Tracker.dll
+C:\Users\carsc22\Documents\GitHub\Weather-Tracker\Weather-Tracker\obj\Debug\netcoreapp3.1\Weather-Tracker.pdb
+C:\Users\carsc22\Documents\GitHub\Weather-Tracker\Weather-Tracker\obj\Debug\netcoreapp3.1\Weather-Tracker.genruntimeconfig.cache
