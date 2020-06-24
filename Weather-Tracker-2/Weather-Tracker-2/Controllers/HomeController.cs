@@ -40,7 +40,6 @@ namespace Weather_Tracker_2.Controllers
         [HttpPost]
         public String WeatherDetail(string City)
         {
-            Console.WriteLine("please");
             //Assign API KEY which received from OPENWEATHERMAP.ORG  
             string appId = "7d21012a49bcafc004eb5353cecc5c42";
 
