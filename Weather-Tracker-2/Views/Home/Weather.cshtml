@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewBag.Title = "Weather";
+}
+
+<h1>Weather</h1>
+
+<h2>Search for a city or zip code to get your weather forecast.</h2>
+
+<div>
+    <strong>City Name:  </strong><input id="txtCity" type="text" />
+    <br />
+    <br />
+    <button id="btnSubmit">Get Weather Forecast</button>
+    <button id="btnFetchHistory">Get Last Search</button>
+</div>
+
+
+
+<div>
+    <h2>Weather Forecast</h2>
+    <table>
+        <tr>
+            <td>Current Weather <img id="imgWeatherIconUrl" src="" title="Weather Icon" /></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>City: </strong>
+                <span id="lblCity"></span> ,
+                <span id="lblCountry"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Latitude: </strong>
+                <label id="lblLat"></label><br />
+                <strong>Longitude: </strong>
+                <label id="lblLon"></label>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Description: </strong>
+                <label id="lblDescription"></label><br />
+                <strong>Humidity: </strong>
+                <label id="lblHumidity"></label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Temperature (Feels Like): </strong>
+                <label id="lblTempFeelsLike"></label><br />
+                <strong>Temperature: </strong>
+                <label id="lblTemp"></label><br />
+                <strong>Temperature (Min): </strong>
+                <label id="lblTempMin"></label><br />
+                <strong>Temperature (Max): </strong>
+                <label id="lblTempMax"></label><br />
+                <strong>Date :</strong>
+                <label id="lblDate"></label><br />
+            </td>
+        </tr>
+
+
+    </table>
+</div>
+
+<script>
+
+    // This is the code that fetches the history. It's very similar to the code to submit the data, but I wanted to leave them both as anonymous functions
+    // rather than creating a named function because I have ideas for extensions that will make them different.
+    $("#btnFetchHistory").click(function () {
+
+        var cityname = $("#txtCity").val();
+        if (cityname.length > 0) {
+            $.ajax({
+                url: "WeatherFetch?City=" + cityname,
+                type: "POST",
+                success: function (rsltval) {
+                    var data = JSON.parse(rsltval);
+                    //var data = rsltval;
+                    console.log(rsltval);
+                    //data - response from server
+                    $("#lblCity").html(data.City);
+                    $("#lblDescription").text(data.Description);
+                    $("#lblTemp").text(data.Temp);
+                    $("#lblTempMin").text(data.TempMax);
+                    $("#lblTempMax").text(data.TempMin);
+                    $("#lblDate").text(data.Date);
+                    $("#lblTempFeelsLike").text(data.TempFeelsLike);
+                    $("#lblHumidity").text(data.Humidity);
+                    $("#lblLat").text(data.Lat);
+                    $("#lblLon").text(data.Lon);
+                    $("#imgWeatherIconUrl").attr("src", "http://openweathermap.org/img/w/" + data.WeatherIcon + ".png");
+                },
+                error: function () {
+
+                }
+            });
+        }
+        else {
+            alert("City Not Found");
+        }
+    });
+
+    // This is the code that Display's the Data. It's very similar to the code to store the data, but I wanted to leave them both as anonymous functions
+    // rather than creating a named function because I have ideas for extensions that will make them different.
+    $("#btnSubmit").click(function () {
+
+        var cityname = $("#txtCity").val();
+        if (cityname.length > 0) {
+            $.ajax({
+                url: "WeatherDetail?City=" + cityname,
+                type: "POST",
+                success: function (rsltval) {
+                    var data = JSON.parse(rsltval);
+                    console.log(data);
+                    $("#lblCity").html(data.City);
+                    $("#lblCountry").text(data.Country);
+                    $("#lblLat").text(data.Lat);
+                    $("#lblLon").text(data.Lon);
+                    $("#lblDescription").text(data.Description);
+                    $("#lblHumidity").text(data.Humidity);
+                    $("#lblTempFeelsLike").text(data.TempFeelsLike);
+                    $("#lblTemp").text(data.Temp);
+                    $("#lblTempMax").text(data.TempMax);
+                    $("#lblTempMin").text(data.TempMin);
+                    $("#imgWeatherIconUrl").attr("src", "http://openweathermap.org/img/w/" + data.WeatherIcon + ".png");
+                    $("#lblDate").text(data.Date);
+                },
+                //Usually this error occurs when the city or zipcode is not found.
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('Search failed. Possibly a bad city?');
+                }
+            });
+        }
+        else {
+            alert("Please enter a city to continue.");
+        }
+    });
+
+</script>  

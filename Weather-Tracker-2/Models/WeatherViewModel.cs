@@ -18,6 +18,7 @@ namespace WeatherForecast.Models
         public string TempMax { get; set; }
         public string TempMin { get; set; }
         public string WeatherIcon { get; set; }
+        public string Date { get; set; }
     }
 
     public class Coord
