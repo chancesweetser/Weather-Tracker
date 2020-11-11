@@ -13,3 +13,20 @@ Because there will be updates and edits to the site, the database will need to f
 
 ### Tools to be used
 * Azure Web App Service
+
+## Installation and Usage ##
+This C#, JavaScript, and SQL code is run in Visual Studio, so if need make sure C# and SQL is installed. In when you run it, click the run button in Visual Studio, which should say "IIS Express (_Browser Here_)" next to it.
+
+## Sample Usages:
+### Before anything happens
+
+<img src = "https://raw.githubusercontent.com/chancesweetser/Weather-Tracker/tree/master/assets/WeatherSearch1.png" width = "400"> <br>
+
+### After of a search for the weather in Centennial, WY
+
+<img src = "https://raw.githubusercontent.com/chancesweetser/Weather-Tracker/tree/master/assets/WeatherSearch2.png" width = "400"> <br>
+
+### After of a previous search for the weather in Centennial, WY, done on November 6th
+
+<img src = "https://raw.githubusercontent.com/chancesweetser/Weather-Tracker/tree/master/assets/WeatherSearch3.png" width = "400"> <br>
+
