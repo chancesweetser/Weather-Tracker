@@ -20,13 +20,13 @@ This C#, JavaScript, and SQL code is run in Visual Studio, so if need make sure 
 ## Sample Usages:
 ### Before anything happens
 
-<img src = "https://raw.githubusercontent.com/chancesweetser/Weather-Tracker/tree/master/assets/WeatherSearch1.png" width = "400"> <br>
+<img src = "https://raw.githubusercontent.com/chancesweetser/Weather-Tracker/master/assets/WeatherSearch1.png" width = "400"> <br>
 
 ### After of a search for the weather in Centennial, WY
 
-<img src = "https://raw.githubusercontent.com/chancesweetser/Weather-Tracker/tree/master/assets/WeatherSearch2.png" width = "400"> <br>
+<img src = "https://raw.githubusercontent.com/chancesweetser/Weather-Tracker/master/assets/WeatherSearch2.png" width = "400"> <br>
 
 ### After of a previous search for the weather in Centennial, WY, done on November 6th
 
-<img src = "https://raw.githubusercontent.com/chancesweetser/Weather-Tracker/tree/master/assets/WeatherSearch3.png" width = "400"> <br>
+<img src = "https://raw.githubusercontent.com/chancesweetser/Weather-Tracker/master/assets/WeatherSearch3.png" width = "400"> <br>
 
