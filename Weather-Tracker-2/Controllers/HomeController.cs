@@ -8,12 +8,6 @@ using System.Data.SqlClient;
 using System.Web.Script.Serialization;
 using WeatherForecast.Models;
 
-//to-do: 
-// add comments in that are well-informed and explain why you did something.
-// start a ReadMe.md
-// upload this to GitHub
-// Save the data for everything that the my program is fetching from the MVC.
-
 namespace Weather_Tracker_2.Controllers
 {
     public class HomeController : Controller
