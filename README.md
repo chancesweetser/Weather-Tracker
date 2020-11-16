@@ -21,6 +21,34 @@ Because there will be updates and edits to the site, the database will need to f
 ## Installation and Usage ##
 This C#, JavaScript, and SQL code is run in Visual Studio, so if need make sure C# and SQL is installed. In when you run it, click the run button in Visual Studio, which should say "IIS Express (_Browser Here_)" next to it.
 
+To set up your database for this project, run this code in your SQL Terminal. You will also have to update line 141 in the HomeController.cs to match the location of your database: 
+
+USE [SkiWeather]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE[dbo].[WeatherHistory]
+(
+
+   [ResortCity][varchar](50) NULL,
+	[ResortDescription] [varchar] (50) NULL,
+	[ResortTemp] [float] NULL,
+	[ResortTempMin] [float] NULL,
+	[ResortTempMax] [float] NULL,
+	[ResortTime] [varchar] (50) NULL,
+	[ResortLatitude] [float] NULL,
+	[ResortLongitude] [float] NULL,
+	[ResortHumidity] [int] NULL,
+	[ResortCurrentWeather] [varchar] (50) NULL,
+	[ResortTempFeels] [float] NULL
+) ON[PRIMARY]
+GO
+
 ## Sample Usages:
 ### Before anything happens
 
