@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Net;
 using System.Data.SqlClient;
@@ -164,35 +161,3 @@ namespace Weather_Tracker_2.Controllers
         }
     }
 }
-
-/*
- * 
- * CODE TO CREATE THE DATABASE 
-
-USE [SkiWeather]
-GO
-
-/****** Object:  Table [dbo].[WeatherHistory]    Script Date: 11/6/2020 4:15:24 PM *****
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE TABLE[dbo].[WeatherHistory]
-(
-
-   [ResortCity][varchar](50) NULL,
-	[ResortDescription] [varchar] (50) NULL,
-	[ResortTemp] [float] NULL,
-	[ResortTempMin] [float] NULL,
-	[ResortTempMax] [float] NULL,
-	[ResortTime] [varchar] (50) NULL,
-	[ResortLatitude] [float] NULL,
-	[ResortLongitude] [float] NULL,
-	[ResortHumidity] [int] NULL,
-	[ResortCurrentWeather] [varchar] (50) NULL,
-	[ResortTempFeels] [float] NULL
-) ON[PRIMARY]
-GO
-*/
