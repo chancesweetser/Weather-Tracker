@@ -21,7 +21,7 @@ Because there will be updates and edits to the site, the database will need to f
 ## Installation and Usage ##
 This C#, JavaScript, and SQL code is run in Visual Studio, so if need make sure C# and SQL is installed. In when you run it, click the run button in Visual Studio, which should say "IIS Express (_Browser Here_)" next to it.
 
-To set up your database for this project, run this code in your SQL Terminal. You will also have to update line 141 in the HomeController.cs to match the location of your database: 
+To set up your database for this project, create a database named "SkiWeather" and run this code in your SQL Terminal. You will also have to update line 141 in the HomeController.cs to match the location of your database: 
 
 USE [SkiWeather]
 GO
