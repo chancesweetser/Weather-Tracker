@@ -4,6 +4,7 @@ using System.Net;
 using System.Data.SqlClient;
 using System.Web.Script.Serialization;
 using WeatherForecast.Models;
+using System.Configuration;
 
 namespace Weather_Tracker_2.Controllers
 {
@@ -33,12 +34,6 @@ namespace Weather_Tracker_2.Controllers
         [HttpPost]
         public String WeatherFetch(string City)
         {
-            string connectionString;
-            SqlConnection cnn;
-            connectionString = @"Data Source=CKS-PC\SQLEXPRESS;Initial Catalog=SkiWeather;Integrated Security=True;";
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
-
             SqlCommand command;
             SqlDataReader dataReader;
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -46,15 +41,16 @@ namespace Weather_Tracker_2.Controllers
 
             sql = "SELECT * FROM dbo.WeatherHistory WHERE ResortCity='"+City+"'";
 
-            command = new SqlCommand(sql, cnn);
+            Connections.Init();
+            command = new SqlCommand(sql, Connections.Connection);
 
             dataReader = command.ExecuteReader();
             dataReader.Read();
 
             Output = StringifyDataHistory(dataReader);
+            Connections.Close();
 
             command.Dispose();
-            cnn.Close();
  
             return Output;
         }
@@ -136,26 +132,21 @@ namespace Weather_Tracker_2.Controllers
 
         public bool PersistWeatherData(ResultViewModel rslt)
         {
-            string connectionString;
-            SqlConnection cnn;
-            connectionString = @"Data Source=CKS-PC\SQLEXPRESS;Initial Catalog=SkiWeather;Integrated Security=True;";
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
+            Connections.Init();
 
-            SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            String sql = "";
-
-            sql = "INSERT INTO dbo.WeatherHistory (ResortCity, ResortTemp, ResortTempMin, ResortTempMax, ResortDescription, ResortTime, ResortLatitude, ResortLongitude, ResortHumidity, ResortTempFeels, ResortCurrentWeather) " +
+            string sql = "INSERT INTO dbo.WeatherHistory (ResortCity, ResortTemp, ResortTempMin, ResortTempMax, ResortDescription, ResortTime, ResortLatitude, ResortLongitude, ResortHumidity, ResortTempFeels, ResortCurrentWeather) " +
                 "values ('" + rslt.City + "', " + rslt.Temp + ", " + rslt.TempMin + ", " + rslt.TempMax + ", '" + rslt.Description + "', '" + rslt.Date + "', '" + rslt.Lat + "', '" + rslt.Lon + "', '" + rslt.Humidity + "', '" + rslt.TempFeelsLike + "', '" + rslt.WeatherIcon + "')";
 
-            command = new SqlCommand(sql, cnn);
+            SqlCommand command = new SqlCommand(sql, Connections.Connection);
 
-            adapter.InsertCommand = new SqlCommand(sql, cnn);
+            command = new SqlCommand(sql, Connections.Connection);
+
+            adapter.InsertCommand = new SqlCommand(sql, Connections.Connection);
             adapter.InsertCommand.ExecuteNonQuery();
 
             command.Dispose();
-            cnn.Close();
+            Connections.Close();
 
             return true;
         }
