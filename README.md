@@ -2,7 +2,8 @@
 ##### Chance Sweetser
 
 ## Project summary ##
-Developed and run in Visual Studio, this is a C# program used to check the weather anywhere in the United States. Displays the current weather for any given location, and can look back at the last search for any previously searched areas.
+Developed and run in Visual Studio, this is a C# program used to check the weather anywhere in the United States. Displays the current weather for any given location using the 
+[OpenWeatherMap](https://openweathermap.org/guide) API, and can look back at the last search for any previously searched areas.
 
 ## Major Tasks and Plans ##
 ***User Interface***
@@ -80,6 +81,6 @@ testcafe edge test.js -t "Weather Fetch Test"
 
 <img src = "https://raw.githubusercontent.com/chancesweetser/Weather-Tracker/master/assets/WeatherSearch3.png?token=AAMAN6CKK7VOPL3IKND3NMS7WWFG2" width = "600"> <br>
 
-### After a failed search for the weather in Cheyennne (misspelled, extra 'n')
+### After a failed search for the weather in 820700 (misspelled, extra '0')
 
 <img src = "https://github.com/chancesweetser/Weather-Tracker/blob/master/assets/WeatherSearch4.PNG?token=AAMAN6CKK7VOPL3IKND3NMS7WWFG2" width = "600"> <br>
