@@ -129,9 +129,9 @@
                     $("#imgWeatherIconUrl").attr("src", "http://openweathermap.org/img/w/" + data.WeatherIcon + ".png");
                     $("#lblDate").text(data.Date);
                 },
-                //Usually this error occurs when the city or zip code is not found.
+                //Usually this error occurs when the city or zipcode is not found.
                 error: function () {
-                    $("#errorMsg").text('Search failed. Possibly a bad city or zip code?');
+                    $("#errorMsg").text('Search failed. Possibly a bad city?');
                 }
             });
         }
