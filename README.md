@@ -35,7 +35,7 @@ GO
 CREATE TABLE[dbo].[WeatherHistory]
 (
 
-   [ResortCity][varchar](50) NULL,
+   [ResortCity] [varchar](50) NULL,
 	[ResortDescription] [varchar] (50) NULL,
 	[ResortTemp] [float] NULL,
 	[ResortTempMin] [float] NULL,
