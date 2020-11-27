@@ -9,9 +9,10 @@
 
 <div>
     <strong>City Name:  </strong><input id="txtCity" type="text" />
+    <span id="errorMsg" style="color: red;"></span>
     <br />
     <br />
-    <div id="errorMsg" style="color: red;"></div>
+
     <button id="btnSubmit">Get Weather Forecast</button>
     <button id="btnFetchHistory">Get Last Search</button>
 </div>
@@ -45,19 +46,19 @@
                 <strong>Description: </strong>
                 <label id="lblDescription"></label><br />
                 <strong>Humidity: </strong>
-                <label id="lblHumidity"></label>%
+                <label id="lblHumidity"></label><strong>%</strong>
             </td>
         </tr>
         <tr>
             <td>
                 <strong>Temperature (Feels Like): </strong>
-                <label id="lblTempFeelsLike"></label>°C<br />
+                <label id="lblTempFeelsLike"></label><strong>°C</strong><br />
                 <strong>Temperature: </strong>
-                <label id="lblTemp"></label>°C<br />
+                <label id="lblTemp"></label><strong>°C</strong><br />
                 <strong>Temperature (Min): </strong>
-                <label id="lblTempMin"></label>°C<br />
+                <label id="lblTempMin"></label><strong>°C</strong><br />
                 <strong>Temperature (Max): </strong>
-                <label id="lblTempMax"></label>°C<br />
+                <label id="lblTempMax"></label><strong>°C</strong><br />
                 <strong>Date :</strong>
                 <label id="lblDate"></label><br />
             </td>
@@ -80,7 +81,6 @@
                 type: "POST",
                 success: function (rsltval) {
                     var data = JSON.parse(rsltval);
-                    //var data = rsltval;
                     console.log(rsltval);
                     //data - response from server
                     $("#lblCity").html(data.City);
@@ -95,8 +95,7 @@
                     $("#lblLon").text(data.Lon);
                     $("#imgWeatherIconUrl").attr("src", "http://openweathermap.org/img/w/" + data.WeatherIcon + ".png");
                 },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-
+                error: function () {
                 }
             });
         }
@@ -131,7 +130,7 @@
                     $("#lblDate").text(data.Date);
                 },
                 //Usually this error occurs when the city or zipcode is not found.
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                error: function () {
                     $("#errorMsg").text('Search failed. Possibly a bad city?');
                 }
             });
