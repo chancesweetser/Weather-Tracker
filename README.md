@@ -15,8 +15,9 @@ Developed and run in Visual Studio, this is a C# program used to check the weath
 
 - Because there will be updates and edits to the site, so the database must be flexible.
 
-### Tools to be used ###
-* Azure Web App Service
+### Tools to be used in future updates ###
+- Azure Web App Service
+- Convert the project to .NET Core instead of Framework 4.x, since Microsoft's support for Framework will soon be dropped.
 
 ## Installation and Usage ##
 This C#, JavaScript, and SQL code is run in Visual Studio, so if need make sure C# and SQL is installed.
