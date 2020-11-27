@@ -23,7 +23,7 @@ This C#, JavaScript, and SQL code is run in Visual Studio, so if need make sure 
 
 To set up your database for this project, create a database named "SkiWeather" and run this code in your SQL Terminal. You will also have to update line 141 in the HomeController.cs to match the location of your database: 
 
-USE [SkiWeather]
+`USE [SkiWeather]
 GO
 
 SET ANSI_NULLS ON
@@ -47,7 +47,7 @@ CREATE TABLE[dbo].[WeatherHistory]
 	[ResortCurrentWeather] [varchar] (50) NULL,
 	[ResortTempFeels] [float] NULL
 ) ON[PRIMARY]
-GO
+GO`
 
 ## Sample Usages:
 ### Before anything happens
