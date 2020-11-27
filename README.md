@@ -7,13 +7,13 @@ Developed and run in Visual Studio, this is a C# program used to check the weath
 ## Major Tasks and Plans ##
 ***User Interface***
 
-Implementing a forecast tracker for 1-3 days ahead can be important for skiers interested in what the upcoming weather holds. Anything past 3 days can be deemed unreliable since weather in the mountains can change rapidly.
+- Implementing a forecast tracker for 1-3 days ahead can be important for skiers interested in what the upcoming weather holds. Anything past 3 days can be deemed unreliable since weather in the mountains can change rapidly.
 
-Have a list of ski areas available through a "quick search" option.
+- Have a list of ski areas available through a "quick search" option.
 
 ***Database***
 
-Because there will be updates and edits to the site, the database will need to flexible.
+- Because there will be updates and edits to the site, so the database must be flexible.
 
 ### Tools to be used ###
 * Azure Web App Service
