@@ -11,6 +11,7 @@
     <strong>City Name:  </strong><input id="txtCity" type="text" />
     <br />
     <br />
+    <div id="errorMsg" style="color: red;"></div>
     <button id="btnSubmit">Get Weather Forecast</button>
     <button id="btnFetchHistory">Get Last Search</button>
 </div>
@@ -71,7 +72,7 @@
     // This is the code that fetches the history. It's very similar to the code to submit the data, but I wanted to leave them both as anonymous functions
     // rather than creating a named function because I have ideas for extensions that will make them different.
     $("#btnFetchHistory").click(function () {
-
+        $("#errorMsg").text('');
         var cityname = $("#txtCity").val();
         if (cityname.length > 0) {
             $.ajax({
@@ -94,20 +95,20 @@
                     $("#lblLon").text(data.Lon);
                     $("#imgWeatherIconUrl").attr("src", "http://openweathermap.org/img/w/" + data.WeatherIcon + ".png");
                 },
-                error: function () {
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
 
                 }
             });
         }
         else {
-            alert("City Not Found");
+            $("#errorMsg").text('Please enter a city to continue.');
         }
     });
 
     // This is the code that Display's the Data. It's very similar to the code to store the data, but I wanted to leave them both as anonymous functions
     // rather than creating a named function because I have ideas for extensions that will make them different.
     $("#btnSubmit").click(function () {
-
+        $("#errorMsg").text('');
         var cityname = $("#txtCity").val();
         if (cityname.length > 0) {
             $.ajax({
@@ -131,12 +132,12 @@
                 },
                 //Usually this error occurs when the city or zipcode is not found.
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert('Search failed. Possibly a bad city?');
+                    $("#errorMsg").text('Search failed. Possibly a bad city?');
                 }
             });
         }
         else {
-            alert("Please enter a city to continue.");
+            $("#errorMsg").text('Please enter a city to continue.');
         }
     });
 

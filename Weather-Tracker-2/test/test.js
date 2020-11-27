@@ -1,11 +1,4 @@
-﻿/*
- * add how to install it and how to run it
- * npm install -g testcafe
- * testcafe edge test.js
- * testcafe edge test.js -t "Weather Fetch Test"
-*/
-
-import { Selector } from 'testcafe'
+﻿import { Selector } from 'testcafe'
 
 fixture`Base Test Set`
     .page`https://localhost:44367/Home/Weather`;

@@ -46,8 +46,14 @@ namespace Weather_Tracker_2.Controllers
 
             dataReader = command.ExecuteReader();
             dataReader.Read();
-
-            Output = StringifyDataHistory(dataReader);
+            if (dataReader.HasRows)
+            {
+                Output = StringifyDataHistory(dataReader);
+            }
+            else
+            {
+                string errorstring = $"City {City} has no history to show.";
+            }
             Connections.Close();
 
             command.Dispose();
@@ -84,49 +90,49 @@ namespace Weather_Tracker_2.Controllers
             //Make the actual API call to fetch the data from openweathermap
             using (WebClient client = new WebClient())
             {
-                string json = client.DownloadString(url);
+                    string json = client.DownloadString(url);
 
-                //*******************************************************************//  
-                //     This is an example of what the received JSON looks like.   
-                //*******************************************************************//  
-                //{"coord":{ "lon":72.85,"lat":19.01},  
-                //"weather":[{"id":711,"main":"Smoke","description":"smoke","icon":"50d"}],  
-                //"base":"stations",  
-                //"main":{"temp":31.75,"feels_like":31.51,"temp_min":31,"temp_max":32.22,"pressure":1014,"humidity":43},  
-                //"visibility":2500,  
-                //"wind":{"speed":4.1,"deg":140},  
-                //"clouds":{"all":0},  
-                //"dt":1578730750,  
-                //"sys":{"type":1,"id":9052,"country":"IN","sunrise":1578707041,"sunset":1578746875},  
-                //"timezone":19800,  
-                //"id":1275339,  
-                //"name":"Mumbai",  
-                //"cod":200}  
- 
-                RootObject weatherInfo = (new JavaScriptSerializer()).Deserialize<RootObject>(json);
+                    //*******************************************************************//  
+                    //     This is an example of what the received JSON looks like.   
+                    //*******************************************************************//  
+                    //{"coord":{ "lon":72.85,"lat":19.01},  
+                    //"weather":[{"id":711,"main":"Smoke","description":"smoke","icon":"50d"}],  
+                    //"base":"stations",  
+                    //"main":{"temp":31.75,"feels_like":31.51,"temp_min":31,"temp_max":32.22,"pressure":1014,"humidity":43},  
+                    //"visibility":2500,  
+                    //"wind":{"speed":4.1,"deg":140},  
+                    //"clouds":{"all":0},  
+                    //"dt":1578730750,  
+                    //"sys":{"type":1,"id":9052,"country":"IN","sunrise":1578707041,"sunset":1578746875},  
+                    //"timezone":19800,  
+                    //"id":1275339,  
+                    //"name":"Mumbai",  
+                    //"cod":200}  
 
-                //Special VIEWMODEL design to send only required fields not all fields which received from   
-                //www.openweathermap.org api  
-                ResultViewModel rslt = new ResultViewModel();
+                    RootObject weatherInfo = (new JavaScriptSerializer()).Deserialize<RootObject>(json);
 
-                rslt.Country = weatherInfo.sys.country;
-                rslt.City = weatherInfo.name;
-                rslt.Lat = Convert.ToString(weatherInfo.coord.lat);
-                rslt.Lon = Convert.ToString(weatherInfo.coord.lon);
-                rslt.Description = weatherInfo.weather[0].description;
-                rslt.Humidity = Convert.ToString(weatherInfo.main.humidity);
-                rslt.Temp = Convert.ToString(weatherInfo.main.temp);
-                rslt.TempFeelsLike = Convert.ToString(weatherInfo.main.feels_like);
-                rslt.TempMax = Convert.ToString(weatherInfo.main.temp_max);
-                rslt.TempMin = Convert.ToString(weatherInfo.main.temp_min);
-                rslt.WeatherIcon = weatherInfo.weather[0].icon;
-                rslt.Date = Convert.ToString(DateTime.Now);
+                    //Special VIEWMODEL design to send only required fields not all fields which received from   
+                    //www.openweathermap.org api  
+                    ResultViewModel rslt = new ResultViewModel();
 
-                //Converting OBJECT to JSON String   
-                var jsonstring = new JavaScriptSerializer().Serialize(rslt);
+                    rslt.Country = weatherInfo.sys.country;
+                    rslt.City = weatherInfo.name;
+                    rslt.Lat = Convert.ToString(weatherInfo.coord.lat);
+                    rslt.Lon = Convert.ToString(weatherInfo.coord.lon);
+                    rslt.Description = weatherInfo.weather[0].description;
+                    rslt.Humidity = Convert.ToString(weatherInfo.main.humidity);
+                    rslt.Temp = Convert.ToString(weatherInfo.main.temp);
+                    rslt.TempFeelsLike = Convert.ToString(weatherInfo.main.feels_like);
+                    rslt.TempMax = Convert.ToString(weatherInfo.main.temp_max);
+                    rslt.TempMin = Convert.ToString(weatherInfo.main.temp_min);
+                    rslt.WeatherIcon = weatherInfo.weather[0].icon;
+                    rslt.Date = Convert.ToString(DateTime.Now);
 
-                PersistWeatherData(rslt);
-                return jsonstring;
+                    //Converting OBJECT to JSON String   
+                    var jsonstring = new JavaScriptSerializer().Serialize(rslt);
+
+                    PersistWeatherData(rslt);
+                    return jsonstring;
             }
         }
 
