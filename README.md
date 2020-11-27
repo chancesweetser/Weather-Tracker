@@ -19,9 +19,11 @@ Because there will be updates and edits to the site, the database will need to f
 * Azure Web App Service
 
 ## Installation and Usage ##
-This C#, JavaScript, and SQL code is run in Visual Studio, so if need make sure C# and SQL is installed. In when you run it, click the run button in Visual Studio, which should say "IIS Express (_Browser Here_)" next to it.
+This C#, JavaScript, and SQL code is run in Visual Studio, so if need make sure C# and SQL is installed.
 
-To set up your database for this project, create a database named "SkiWeather" and run this code in your SQLCMD. 
+To set up your database for this project, create a database named "SkiWeather" and run the code below in your SQLCMD, or create a query in Microsoft SQL Server Management Studio with the code below and execute it.
+
+Additionally, you must change the code on line 14 of the _Web.config_ file so that the Data Source is set to the name of your SQL Server's name.
 
 ```
 USE [SkiWeather]
@@ -50,6 +52,8 @@ CREATE TABLE[dbo].[WeatherHistory]
 ) ON[PRIMARY]
 GO
 ```
+
+When run, click the run button in Visual Studio, which should say "IIS Express (_Browser Here_)" next to it. 
 
 ## How to run the test cases:
 In the test directory, the file _test.js_ contains two tests that use TestCafe. In order to use TestCafe, you must run ```npm install -g testcafe``` in your terminal. 
