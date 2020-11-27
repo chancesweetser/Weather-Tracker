@@ -3,7 +3,7 @@
 
 ## Project summary ##
 Developed and run in Visual Studio, this is a C# program used to check the weather anywhere in the United States. Displays the current weather for any given location using the 
-[OpenWeatherMap](https://openweathermap.org/guide) API, and can look back at the last search for any previously searched areas.
+[OpenWeatherMap API](https://openweathermap.org/guide), and can look back at the last search for any previously searched areas.
 
 ## Major Tasks and Plans ##
 ***User Interface***
