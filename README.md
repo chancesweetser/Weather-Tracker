@@ -76,7 +76,10 @@ testcafe edge test.js -t "Weather Fetch Test"
 
 <img src = "https://raw.githubusercontent.com/chancesweetser/Weather-Tracker/master/assets/WeatherSearch2.png?token=AAMAN6ELCAUBIUHFW2W7CMK7WWFGW" width = "600"> <br>
 
-### Fetching a previous search for the weather in Centennial, WY, done on November 6th
+### Fetching a previous search for the weather in Laramie, WY, done on November 27th
 
 <img src = "https://raw.githubusercontent.com/chancesweetser/Weather-Tracker/master/assets/WeatherSearch3.png?token=AAMAN6CKK7VOPL3IKND3NMS7WWFG2" width = "600"> <br>
 
+### After a failed search for the weather in Cheyennne (misspelled, extra 'n')
+
+<img src = "https://github.com/chancesweetser/Weather-Tracker/blob/master/assets/WeatherSearch4.PNG?token=AAMAN6CKK7VOPL3IKND3NMS7WWFG2" width = "600"> <br>
