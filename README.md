@@ -62,7 +62,7 @@ In the test directory, the file _test.js_ contains two tests that use TestCafe. 
 
 [Getting Started with TestCafe](https://devexpress.github.io/testcafe/documentation/getting-started/)
 
-Here are a couple of ways to use TestCafe in the cmd for this project:
+Here are a couple of ways to use TestCafe in the terminal for this project:
 ```
 testcafe edge test.js
 testcafe edge test.js -t "Weather Fetch Test"
