@@ -1,5 +1,5 @@
 # Outdoor Activity Weather Tracker Website
-##### Chance Sweetser
+##### Cadence Sweetser
 
 ## Project summary ##
 Developed and run in Visual Studio, this is a C# program used to check the weather anywhere in the United States. Displays the current weather for any given location using the 
